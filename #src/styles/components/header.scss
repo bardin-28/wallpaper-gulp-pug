@@ -1,0 +1,161 @@
+/* --------------------------------------------------------------------------
+ * >>> Header Block:
+ * -------------------------------------------------------------------------- */
+.header-main{
+  padding: 15px 0 10px 0;
+
+  @include lg-up{
+    position: relative;
+  }
+}
+
+.header-body{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo{
+
+  img, svg{
+    max-width: 100%;
+  }
+}
+
+.header-caption{
+  font-size: 13px;
+  text-transform: uppercase;
+  max-width: 200px;
+  margin-left: 30px;
+  display: none;
+
+  @include lg-up{
+    display: block;
+  }
+}
+
+.header-info{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  @include lg-up{
+    width: auto;
+    justify-content: normal;
+  }
+}
+
+.header-contacts{
+  display: none;
+  align-items: center;
+
+  @include lg-up{
+    display: flex;
+  }
+}
+
+.header-menu-btn{
+  svg{
+    height: 25px;
+    width: 25px;
+  }
+
+  @include lg-up{
+    display: none;
+  }
+}
+
+.header-menu-btn.menu-opened{
+  z-index: 10;
+
+  svg{
+    color: $white;
+  }
+}
+
+.header-phone{
+  font-size: 30px;
+  color: $black;
+  margin-right: 15px;
+  letter-spacing: .02em;
+  cursor: pointer;
+
+  @include ltm-up{
+    font-size: 35px;
+  }
+}
+
+.header-menu{
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 5px 0;
+  background: rgba(0,0,0,.6);
+
+  @include lg-up{
+    display: block;
+    top: auto;
+    bottom: -34px;
+  }
+}
+
+.header-menu.menu-opened {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .header-menu-list{
+    flex-direction: column;
+  }
+}
+
+.header-menu-list{
+  display: flex;
+  justify-content: center;
+}
+
+.header-menu-item{
+  color: $white;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+
+  @include lg-up{
+    text-align: left;
+    font-size: 14px;
+    padding: 0 33px 0 60px;
+  }
+
+  @include ltm-up{
+    padding: 0 54px 0 81px;
+  }
+}
+
+.header-menu-item:not(:first-of-type){
+  margin-top: 25px;
+  @include lg-up{
+    margin-top: 0;
+  }
+}
+
+.header-menu-item:not(:first-of-type):before{
+  @include lg-up{
+    content: '';
+    height: 70%;
+    width: 1px;
+    background: $grey;
+    position: absolute;
+    left: 15px;
+    top: 4px;;
+  }
+}
+
+.header-menu-link{
+  cursor: pointer;
+}
